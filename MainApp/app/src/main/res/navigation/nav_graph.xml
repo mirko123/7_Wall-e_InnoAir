@@ -12,17 +12,84 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.mainapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+            android:id="@+id/action_FirstFragment_to_ChargeCardFragment"
+            app:destination="@id/ChargeCardFragment" />
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_FirstFragment_to_BuyTicketFragment"
+            app:destination="@id/BuyTicketFragment" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_EmulateFragment"
+            app:destination="@id/EmulateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChargeCardFragment"
+        android:name="com.example.mainapp.ChargeCardFragment"
+        android:label="Charge card"
+        tools:layout="@layout/fragment_charge_card">
+
+        <action
+            android:id="@+id/action_ChargeCardFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/BuyTicketFragment"
+        android:name="com.example.mainapp.BuyTicketFragment"
+        android:label="Buy ticket"
+        tools:layout="@layout/fragment_buy_ticket">
+
+        <action
+            android:id="@+id/action_BuyTicketFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/EmulateFragment"-->
+<!--        android:name="com.example.mainapp.EmulateFragment"-->
+<!--        android:label="Emulate"-->
+<!--        tools:layout="@layout/fragment_emulate">-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_EmulateFragment_to_FirstFragment"-->
+<!--            app:destination="@id/FirstFragment" />-->
+<!--    </fragment>-->
+
+
+    <fragment
+        android:id="@+id/EmulateFragment"
+        android:name="com.example.mainapp.EmulateFragment"
+        android:label="Emulate"
+        tools:layout="@layout/fragment_emulate">
+
+        <action
+            android:id="@+id/action_EmulateFragment_to_LightThemeActivity"
+            app:destination="@id/LightThemeActivity" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/LightThemeActivity"-->
+<!--        android:name="com.example.mainapp.EmulateFragment"-->
+<!--        android:label="Card"-->
+<!--        tools:layout="@layout/fragment_emulate"-->
+<!--        tools:ignore="DuplicateIds">-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_ChargeCardFragment_to_FirstFragment"-->
+<!--            app:destination="@id/FirstFragment" />-->
+<!--    </fragment>-->
+
+    <activity
+        android:id="@+id/LightThemeActivity"
+        android:name="com.example.mainapp.cardform.LightThemeActivity"
+        android:label="Card"
+        tools:layout="@layout/card_form">
+
+<!--        <action-->
+<!--            android:id="@+id/action_LightThemeActivity_to_FirstFragment"-->
+<!--            app:destination="@id/FirstFragment" />-->
+    </activity>
+
 </navigation>
