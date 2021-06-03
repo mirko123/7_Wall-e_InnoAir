@@ -81,10 +81,10 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
     private CvvEditText mCvv;
     private CardholderNameEditText mCardholderName;
     private ImageView mCardholderNameIcon;
-    private ImageView mPostalCodeIcon;
-    private PostalCodeEditText mPostalCode;
+//    private ImageView mPostalCodeIcon;
+//    private PostalCodeEditText mPostalCode;
     private ImageView mMobileNumberIcon;
-    private CountryCodeEditText mCountryCode;
+//    private CountryCodeEditText mCountryCode;
     private MobileNumberEditText mMobileNumber;
     private TextView mMobileNumberExplanation;
     private com.example.mainapp.cardform.view.InitialValueCheckBox mSaveCardCheckBox;
@@ -93,7 +93,7 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
     private boolean mExpirationRequired;
     private boolean mCvvRequired;
     private int mCardholderNameStatus = FIELD_DISABLED;
-    private boolean mPostalCodeRequired;
+//    private boolean mPostalCodeRequired;
     private boolean mMobileNumberRequired;
     private String mActionLabel;
     private boolean mSaveCardCheckBoxVisible;
@@ -139,10 +139,10 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         mCvv = findViewById(R.id.bt_card_form_cvv);
         mCardholderName = findViewById(R.id.bt_card_form_cardholder_name);
         mCardholderNameIcon = findViewById(R.id.bt_card_form_cardholder_name_icon);
-        mPostalCodeIcon = findViewById(R.id.bt_card_form_postal_code_icon);
-        mPostalCode = findViewById(R.id.bt_card_form_postal_code);
+//        mPostalCodeIcon = findViewById(R.id.bt_card_form_postal_code_icon);
+//        mPostalCode = findViewById(R.id.bt_card_form_postal_code);
         mMobileNumberIcon = findViewById(R.id.bt_card_form_mobile_number_icon);
-        mCountryCode = findViewById(R.id.bt_card_form_country_code);
+//        mCountryCode = findViewById(R.id.bt_card_form_country_code);
         mMobileNumber = findViewById(R.id.bt_card_form_mobile_number);
         mMobileNumberExplanation = findViewById(R.id.bt_card_form_mobile_number_explanation);
         mSaveCardCheckBox = findViewById(R.id.bt_card_form_save_card_checkbox);
@@ -153,7 +153,7 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         setListeners(mCardNumber);
         setListeners(mExpiration);
         setListeners(mCvv);
-        setListeners(mPostalCode);
+//        setListeners(mPostalCode);
         setListeners(mMobileNumber);
 
         mCardNumber.setOnCardTypeChangedListener(this);
@@ -203,10 +203,10 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
      * @param required {@code true} to show and require a postal code, {@code false} otherwise. Defaults to {@code false}.
      * @return {@link CardForm} for method chaining
      */
-    public CardForm postalCodeRequired(boolean required) {
-        mPostalCodeRequired = required;
-        return this;
-    }
+//    public CardForm postalCodeRequired(boolean required) {
+//        mPostalCodeRequired = required;
+//        return this;
+//    }
 
     /**
      * @param required {@code true} to show and require a mobile number, {@code false} otherwise. Defaults to {@code false}.
@@ -285,7 +285,7 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         boolean isDarkBackground = ViewUtils.isDarkBackground(activity);
         mCardholderNameIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_cardholder_name_dark: R.drawable.bt_ic_cardholder_name);
         mCardNumberIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_card_dark : R.drawable.bt_ic_card);
-        mPostalCodeIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_postal_code_dark : R.drawable.bt_ic_postal_code);
+//        mPostalCodeIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_postal_code_dark : R.drawable.bt_ic_postal_code);
         mMobileNumberIcon.setImageResource(isDarkBackground? R.drawable.bt_ic_mobile_number_dark : R.drawable.bt_ic_mobile_number);
 
         setViewVisibility(mCardholderNameIcon,  cardHolderNameVisible);
@@ -294,10 +294,10 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         setFieldVisibility(mCardNumber, mCardNumberRequired);
         setFieldVisibility(mExpiration, mExpirationRequired);
         setFieldVisibility(mCvv, mCvvRequired);
-        setViewVisibility(mPostalCodeIcon, mPostalCodeRequired);
-        setFieldVisibility(mPostalCode, mPostalCodeRequired);
+//        setViewVisibility(mPostalCodeIcon, mPostalCodeRequired);
+//        setFieldVisibility(mPostalCode, mPostalCodeRequired);
         setViewVisibility(mMobileNumberIcon, mMobileNumberRequired);
-        setFieldVisibility(mCountryCode, mMobileNumberRequired);
+//        setFieldVisibility(mCountryCode, mMobileNumberRequired);
         setFieldVisibility(mMobileNumber, mMobileNumberRequired);
         setViewVisibility(mMobileNumberExplanation, mMobileNumberRequired);
         setViewVisibility(mSaveCardCheckBox, mSaveCardCheckBoxVisible);
@@ -344,9 +344,9 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
      *
      * @param res The drawable resource for the postal code icon.
      */
-    public void setPostalCodeIcon(@DrawableRes int res) {
-        mPostalCodeIcon.setImageResource(res);
-    }
+//    public void setPostalCodeIcon(@DrawableRes int res) {
+//        mPostalCodeIcon.setImageResource(res);
+//    }
 
     /**
      * Sets the icon to the left of the mobile number entry field, overriding the default icon.
@@ -428,7 +428,7 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         mCardNumber.setEnabled(enabled);
         mExpiration.setEnabled(enabled);
         mCvv.setEnabled(enabled);
-        mPostalCode.setEnabled(enabled);
+//        mPostalCode.setEnabled(enabled);
         mMobileNumber.setEnabled(enabled);
     }
 
@@ -449,11 +449,11 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         if (mCvvRequired) {
             valid = valid && mCvv.isValid();
         }
-        if (mPostalCodeRequired) {
-            valid = valid && mPostalCode.isValid();
-        }
+//        if (mPostalCodeRequired) {
+//            valid = valid && mPostalCode.isValid();
+//        }
         if (mMobileNumberRequired) {
-            valid = valid && mCountryCode.isValid() && mMobileNumber.isValid();
+            valid = valid && /*mCountryCode.isValid() && */mMobileNumber.isValid();
         }
         return valid;
     }
@@ -474,11 +474,11 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         if (mCvvRequired) {
             mCvv.validate();
         }
-        if (mPostalCodeRequired) {
-            mPostalCode.validate();
-        }
+//        if (mPostalCodeRequired) {
+//            mPostalCode.validate();
+//        }
         if (mMobileNumberRequired) {
-            mCountryCode.validate();
+//            mCountryCode.validate();
             mMobileNumber.validate();
         }
     }
@@ -514,16 +514,16 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
     /**
      * @return {@link PostalCodeEditText} view in the card form
      */
-    public PostalCodeEditText getPostalCodeEditText() {
-        return mPostalCode;
-    }
+//    public PostalCodeEditText getPostalCodeEditText() {
+//        return mPostalCode;
+//    }
 
     /**
      * @return {@link CountryCodeEditText} view in the card form
      */
-    public CountryCodeEditText getCountryCodeEditText() {
-        return mCountryCode;
-    }
+//    public CountryCodeEditText getCountryCodeEditText() {
+//        return mCountryCode;
+//    }
 
     /**
      * @return {@link MobileNumberEditText} view in the card form
@@ -591,28 +591,28 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
      *
      * @param errorMessage the error message to display
      */
-    public void setPostalCodeError(String errorMessage) {
-        if (mPostalCodeRequired) {
-            mPostalCode.setError(errorMessage);
-            if (!mCardNumber.isFocused() && !mExpiration.isFocused() && !mCvv.isFocused() && !mCardholderName.isFocused()) {
-                requestEditTextFocus(mPostalCode);
-            }
-        }
-    }
+//    public void setPostalCodeError(String errorMessage) {
+//        if (mPostalCodeRequired) {
+//            mPostalCode.setError(errorMessage);
+//            if (!mCardNumber.isFocused() && !mExpiration.isFocused() && !mCvv.isFocused() && !mCardholderName.isFocused()) {
+//                requestEditTextFocus(mPostalCode);
+//            }
+//        }
+//    }
 
     /**
      * Set visual indicator on country code to indicate error
      *
      * @param errorMessage the error message to display
      */
-    public void setCountryCodeError(String errorMessage) {
-        if (mMobileNumberRequired) {
-            mCountryCode.setError(errorMessage);
-            if (!mCardNumber.isFocused() && !mExpiration.isFocused() && !mCvv.isFocused() && !mCardholderName.isFocused() &&  !mPostalCode.isFocused()) {
-                requestEditTextFocus(mCountryCode);
-            }
-        }
-    }
+//    public void setCountryCodeError(String errorMessage) {
+//        if (mMobileNumberRequired) {
+//            mCountryCode.setError(errorMessage);
+//            if (!mCardNumber.isFocused() && !mExpiration.isFocused() && !mCvv.isFocused() && !mCardholderName.isFocused() &&  !mPostalCode.isFocused()) {
+//                requestEditTextFocus(mCountryCode);
+//            }
+//        }
+//    }
 
     /**
      * Set visual indicator on mobile number field to indicate error
@@ -622,7 +622,7 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
     public void setMobileNumberError(String errorMessage) {
         if (mMobileNumberRequired) {
             mMobileNumber.setError(errorMessage);
-            if (!mCardNumber.isFocused() && !mExpiration.isFocused() && !mCvv.isFocused() && !mCardholderName.isFocused() && !mPostalCode.isFocused() && !mCountryCode.isFocused()) {
+            if (!mCardNumber.isFocused() && !mExpiration.isFocused() && !mCvv.isFocused() && !mCardholderName.isFocused() /*&& !mPostalCode.isFocused() && !mCountryCode.isFocused()*/) {
                 requestEditTextFocus(mMobileNumber);
             }
         }
@@ -681,16 +681,16 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
     /**
      * @return the text in the postal code field
      */
-    public String getPostalCode() {
-        return mPostalCode.getText().toString();
-    }
+//    public String getPostalCode() {
+//        return mPostalCode.getText().toString();
+//    }
 
     /**
      * @return the text in the country code field
      */
-    public String getCountryCode() {
-        return mCountryCode.getCountryCode();
-    }
+//    public String getCountryCode() {
+//        return mCountryCode.getCountryCode();
+//    }
 
     /**
      * @return the unformatted text in the mobile number field

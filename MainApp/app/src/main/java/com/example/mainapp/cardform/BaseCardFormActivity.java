@@ -37,7 +37,7 @@ public class BaseCardFormActivity extends AppCompatActivity implements OnCardFor
                 .maskCvv(true)
                 .expirationRequired(true)
                 .cvvRequired(true)
-                .postalCodeRequired(true)
+//                .postalCodeRequired(true)
                 .mobileNumberRequired(true)
                 .saveCardCheckBoxChecked(true)
                 .saveCardCheckBoxVisible(true)
