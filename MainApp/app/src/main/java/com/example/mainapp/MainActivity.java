@@ -1,5 +1,6 @@
 package com.example.mainapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,7 +18,7 @@ import com.example.mainapp.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
-
+import com.example.mainapp.write.Common;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Common.mAppContext = getApplicationContext();
     }
 
     @Override
@@ -73,4 +76,19 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (Common.getPendingComponentName() != null) {
+            intent.setComponent(Common.getPendingComponentName());
+            startActivity(intent);
+        } else {
+            int typeCheck = Common.treatAsNewTag(intent, this);
+            if (typeCheck == -1 || typeCheck == -2) {
+                int b = 2;
+            }
+        }
+    }
+
 }

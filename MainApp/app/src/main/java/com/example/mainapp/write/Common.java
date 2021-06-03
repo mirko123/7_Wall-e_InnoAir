@@ -66,10 +66,17 @@ import java.util.Arrays;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import de.syss.MifareClassicTool.Activities.IActivityThatReactsToSave;
+import com.example.mainapp.R;
 
-import static de.syss.MifareClassicTool.Activities.Preferences.Preference.AutoCopyUID;
-import static de.syss.MifareClassicTool.Activities.Preferences.Preference.UIDFormat;
+//import com.example.mainapp.write.MCDiffUtils.Preference.*;
+//import de.syss.MifareClassicTool.Activities.IActivityThatReactsToSave;
+//
+//import static de.syss.MifareClassicTool.Activities.Preferences.Preference.AutoCopyUID;
+//import static de.syss.MifareClassicTool.Activities.Preferences.Preference.UIDFormat;
+
+//import com.example.mainapp.write.MCDiffUtils.Preference.*;
+//import static de.syss.MifareClassicTool.Activities.Preferences.Preference.AutoCopyUID;
+//import static de.syss.MifareClassicTool.Activities.Preferences.Preference.UIDFormat;
 
 
 /**
@@ -77,6 +84,29 @@ import static de.syss.MifareClassicTool.Activities.Preferences.Preference.UIDFor
  * @author Gerhard Klostermeier
  */
 public class Common extends Application {
+
+    public enum Preference {
+        AutoReconnect("auto_reconnect"),
+        AutoCopyUID("auto_copy_uid"),
+        UIDFormat("uid_format"),
+        SaveLastUsedKeyFiles("save_last_used_key_files"),
+        UseCustomSectorCount("use_custom_sector_count"),
+        CustomSectorCount("custom_sector_count"),
+        UseRetryAuthentication("use_retry_authentication"),
+        RetryAuthenticationCount("retry_authentication_count");
+        // Add more preferences here (comma separated).
+
+        private final String text;
+
+        Preference(final String text) {
+            this.text = text;
+        }
+
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
 
     /**
      * True if this is the donate version of MCT.
@@ -207,7 +237,7 @@ public class Common extends Application {
 
 
     private static NfcAdapter mNfcAdapter;
-    private static Context mAppContext;
+    public static Context mAppContext;
     private static float mScale;
 
 // ############################################################################
@@ -456,64 +486,64 @@ public class Common extends Application {
      * @see #saveFile(File, String[], boolean)
      * @see #saveFileAppend(File, String[], boolean)
      */
-    public static void checkFileExistenceAndSave(final File file,
-            final String[] lines, final boolean isDump, final Context context,
-            final IActivityThatReactsToSave activity) {
-        if (file.exists()) {
-            // Save conflict for dump file or key file?
-            int message = R.string.dialog_save_conflict_keyfile;
-            if (isDump) {
-                message = R.string.dialog_save_conflict_dump;
-            }
-
-            // File already exists. Replace? Append? Cancel?
-            new AlertDialog.Builder(context)
-            .setTitle(R.string.dialog_save_conflict_title)
-            .setMessage(message)
-            .setIcon(android.R.drawable.ic_dialog_alert)
-            .setPositiveButton(R.string.action_replace,
-                    (dialog, which) -> {
-                        // Replace.
-                        if (Common.saveFile(file, lines, false)) {
-                            Toast.makeText(context, R.string.info_save_successful,
-                                    Toast.LENGTH_LONG).show();
-                            activity.onSaveSuccessful();
-                        } else {
-                            Toast.makeText(context, R.string.info_save_error,
-                                    Toast.LENGTH_LONG).show();
-                            activity.onSaveFailure();
-                        }
-                    })
-            .setNeutralButton(R.string.action_append,
-                    (dialog, which) -> {
-                        // Append.
-                        if (Common.saveFileAppend(file, lines, isDump)) {
-                            Toast.makeText(context, R.string.info_save_successful,
-                                    Toast.LENGTH_LONG).show();
-                            activity.onSaveSuccessful();
-                        } else {
-                            Toast.makeText(context, R.string.info_save_error,
-                                    Toast.LENGTH_LONG).show();
-                            activity.onSaveFailure();
-                        }
-                    })
-            .setNegativeButton(R.string.action_cancel,
-                    (dialog, id) -> {
-                        // Cancel.
-                        activity.onSaveFailure();
-                    }).show();
-        } else {
-            if (Common.saveFile(file, lines, false)) {
-                Toast.makeText(context, R.string.info_save_successful,
-                        Toast.LENGTH_LONG).show();
-                activity.onSaveSuccessful();
-            } else {
-                Toast.makeText(context, R.string.info_save_error,
-                        Toast.LENGTH_LONG).show();
-                activity.onSaveFailure();
-            }
-        }
-    }
+//    public static void checkFileExistenceAndSave(final File file,
+//            final String[] lines, final boolean isDump, final Context context,
+//            final IActivityThatReactsToSave activity) {
+//        if (file.exists()) {
+//            // Save conflict for dump file or key file?
+//            int message = R.string.dialog_save_conflict_keyfile;
+//            if (isDump) {
+//                message = R.string.dialog_save_conflict_dump;
+//            }
+//
+//            // File already exists. Replace? Append? Cancel?
+//            new AlertDialog.Builder(context)
+//            .setTitle(R.string.dialog_save_conflict_title)
+//            .setMessage(message)
+//            .setIcon(android.R.drawable.ic_dialog_alert)
+//            .setPositiveButton(R.string.action_replace,
+//                    (dialog, which) -> {
+//                        // Replace.
+//                        if (Common.saveFile(file, lines, false)) {
+//                            Toast.makeText(context, R.string.info_save_successful,
+//                                    Toast.LENGTH_LONG).show();
+//                            activity.onSaveSuccessful();
+//                        } else {
+//                            Toast.makeText(context, R.string.info_save_error,
+//                                    Toast.LENGTH_LONG).show();
+//                            activity.onSaveFailure();
+//                        }
+//                    })
+//            .setNeutralButton(R.string.action_append,
+//                    (dialog, which) -> {
+//                        // Append.
+//                        if (Common.saveFileAppend(file, lines, isDump)) {
+//                            Toast.makeText(context, R.string.info_save_successful,
+//                                    Toast.LENGTH_LONG).show();
+//                            activity.onSaveSuccessful();
+//                        } else {
+//                            Toast.makeText(context, R.string.info_save_error,
+//                                    Toast.LENGTH_LONG).show();
+//                            activity.onSaveFailure();
+//                        }
+//                    })
+//            .setNegativeButton(R.string.action_cancel,
+//                    (dialog, id) -> {
+//                        // Cancel.
+//                        activity.onSaveFailure();
+//                    }).show();
+//        } else {
+//            if (Common.saveFile(file, lines, false)) {
+//                Toast.makeText(context, R.string.info_save_successful,
+//                        Toast.LENGTH_LONG).show();
+//                activity.onSaveSuccessful();
+//            } else {
+//                Toast.makeText(context, R.string.info_save_error,
+//                        Toast.LENGTH_LONG).show();
+//                activity.onSaveFailure();
+//            }
+//        }
+//    }
 
     /**
      * Append an array of strings (each field is one line) to a given file.
@@ -724,8 +754,10 @@ public class Common extends Application {
      * @see #checkMifareClassicSupport(Tag, Context)
      */
     public static int treatAsNewTag(Intent intent, Context context) {
+//    public static int treatAsNewTag() {
         // Check if Intent has a NFC Tag.
-        if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
+        String intentActionString = intent.getAction();
+        if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(intentActionString)) {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             tag = MCReader.patchTag(tag);
             if (tag == null) {
@@ -734,11 +766,12 @@ public class Common extends Application {
             setTag(tag);
             logUid(bytes2Hex(tag.getId()));
 
+
             boolean isCopyUID = getPreferences().getBoolean(
-                    AutoCopyUID.toString(), false);
+                    Preference.AutoCopyUID.toString(), false);
             if (isCopyUID) {
                 int format = getPreferences().getInt(
-                        UIDFormat.toString(), 0);
+                        Preference.UIDFormat.toString(), 0);
                 String fmtUID = byte2FmtString(tag.getId(),format);
                 // Show Toast with copy message.
                 Toast.makeText(context,

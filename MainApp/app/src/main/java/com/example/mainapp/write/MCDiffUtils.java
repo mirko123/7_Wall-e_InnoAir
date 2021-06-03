@@ -27,7 +27,6 @@ import java.util.ArrayList;
  * @author Gerhard Klostermeier
  */
 public class MCDiffUtils {
-
     /**
      * Compare two dumps and get a list of all indices where
      * they differ from each other.

@@ -38,8 +38,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import de.syss.MifareClassicTool.Activities.Preferences.Preference;
-import de.syss.MifareClassicTool.Common.Operation;
+import com.example.mainapp.write.Common.*;
+import com.example.mainapp.R;
+
+//import de.syss.MifareClassicTool.Activities.Preferences.Preference;
+//import de.syss.MifareClassicTool.Common.Operation;
 
 /**
  * Provides functions to read/write/analyze a MIFARE Classic tag.
@@ -810,7 +813,7 @@ public class MCReader {
                                 acMatrix[0][3],
                                 acMatrix[1][3],
                                 acMatrix[2][3],
-                                Operation.WriteAC,
+                                Common.Operation.WriteAC,
                                 true, isKeyBReadable);
                         // Is key A writable? (If so, key B will be writable
                         // with the same key.)
@@ -818,7 +821,7 @@ public class MCReader {
                                 acMatrix[0][3],
                                 acMatrix[1][3],
                                 acMatrix[2][3],
-                                Operation.WriteKeyA,
+                                Common.Operation.WriteKeyA,
                                 true, isKeyBReadable);
 
                         int result = keyABValue;
@@ -849,7 +852,7 @@ public class MCReader {
                                         acMatrix[0][acBitsForBlock],
                                         acMatrix[1][acBitsForBlock],
                                         acMatrix[2][acBitsForBlock],
-                                        Operation.Write,
+                                        Common.Operation.Write,
                                         false, isKeyBReadable));
                     }
 
@@ -873,29 +876,34 @@ public class MCReader {
      * will be shown.
      * @return Number of keys loaded. -1 on error.
      */
-    public int setKeyFile(File[] keyFiles, Context context) {
-        if (keyFiles == null || keyFiles.length == 0 || context == null) {
-            return -1;
-        }
+//    public int setKeyFile(File[] keyFiles, Context context) {
+    public int setKeyFile(Context context) {
+//        if (keyFiles == null || keyFiles.length == 0 || context == null) {
+//            return -1;
+//        }
         HashSet<String> keys = new HashSet<>();
-        for (File file : keyFiles) {
-            String[] lines = Common.readFileLineByLine(file, false, context);
-            if (lines != null) {
-                for (String line : lines) {
-                    if (!line.equals("") && line.length() == 12
-                            && line.matches("[0-9A-Fa-f]+")) {
-                        try {
-                            keys.add(line);
-                        } catch (OutOfMemoryError e) {
-                            // Error. Too many keys (out of memory).
-                            Toast.makeText(context, R.string.info_to_many_keys,
-                                    Toast.LENGTH_LONG).show();
-                            return -1;
-                        }
-                    }
-                }
-            }
+        for (int i = 0; i < CardData.keys.length; i++) {
+            String line = CardData.keys[i];
+            keys.add(line);
         }
+//        for (File file : keyFiles) {
+//            String[] lines = Common.readFileLineByLine(file, false, context);
+//            if (lines != null) {
+//                for (String line : lines) {
+//                    if (!line.equals("") && line.length() == 12
+//                            && line.matches("[0-9A-Fa-f]+")) {
+//                        try {
+//                            keys.add(line);
+//                        } catch (OutOfMemoryError e) {
+//                            // Error. Too many keys (out of memory).
+//                            Toast.makeText(context, R.string.info_to_many_keys,
+//                                    Toast.LENGTH_LONG).show();
+//                            return -1;
+//                        }
+//                    }
+//                }
+//            }
+//        }
         if (keys.size() > 0) {
             mHasAllZeroKey = keys.contains("000000000000");
             mKeysWithOrder = new ArrayList<>(keys);

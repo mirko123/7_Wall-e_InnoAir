@@ -13,6 +13,8 @@ import androidx.navigation.fragment.NavHostFragment;
 //import com.example.mainapp.databinding.FragmentBuyTicketBinding;
 import com.example.mainapp.cardform.LightThemeActivity;
 import com.example.mainapp.databinding.FragmentChargeCardBinding;
+import com.example.mainapp.write.Common;
+import com.example.mainapp.write.KeyMapCreator;
 
 public class ChargeCardFragment extends Fragment {
 
@@ -35,8 +37,11 @@ public class ChargeCardFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ChargeCardFragment.this)
-                        .navigate(R.id.action_ChargeCardFragment_to_FirstFragment);
+                KeyMapCreator keyMapCreator = new KeyMapCreator();
+                keyMapCreator.start(getActivity().getIntent());
+
+//                NavHostFragment.findNavController(ChargeCardFragment.this)
+//                        .navigate(R.id.action_ChargeCardFragment_to_FirstFragment);
 
 //                NavHostFragment.findNavController(ChargeCardFragment.this)
 //                        .navigate(R.id.action_ChargeCardFragment_to_LightThemeActivity);
@@ -50,4 +55,9 @@ public class ChargeCardFragment extends Fragment {
         binding = null;
     }
 
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        super.onNewIntent(intent);
+//        setIntent(intent);
+//    }
 }
