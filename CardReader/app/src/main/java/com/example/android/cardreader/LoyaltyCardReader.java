@@ -62,7 +62,7 @@ import static com.google.android.material.internal.ContextUtils.getActivity;
 public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
     private static final String TAG = "LoyaltyCardReader";
     // AID for our loyalty card service.
-    private static final String SAMPLE_LOYALTY_CARD_AID = "F222222220";
+    private static final String SAMPLE_LOYALTY_CARD_AID = "F222222222";
     // ISO-DEP command HEADER for selecting an AID.
     // Format: [Class | Instruction | Parameter 1 | Parameter 2]
     private static final String SELECT_APDU_HEADER = "00A40400";
@@ -135,17 +135,13 @@ public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
                 int resultLength = result.length;
                 byte[] statusWord = {result[resultLength-2], result[resultLength-1]};
                 byte[] payload = Arrays.copyOf(result, resultLength-2);
+                String resStr = new String(result, "UTF-8");
+                String encriptedData = new String(payload, "UTF-8");
                 if (Arrays.equals(SELECT_OK_SW, statusWord)) {
                     // The remote NFC device will immediately respond with its stored account number
-//                    String accountNumber = new String(payload, "UTF-8");
-                    String encriptedData = new String(payload, "UTF-8");
-//                    encriptedData = AESHelper.encryptionWithKey("15-05-2022 Miroslav Nikolov");
-//                    encriptedData = AESHelper.encryptionWithKey("15-05-2022 Miroslav Nikolov");
-//                    encriptedData = AESHelper.encryptionWithKey("15-05-2020 Miroslav Nikolov");
                     String decriptedData = AESHelper.decryptWithKey(encriptedData);
                     Log.i(TAG, "Received: " + decriptedData);
                     ProcesInformation(decriptedData);
-
 
                     // Inform CardReaderFragment of received account number
                     if (true) {
@@ -161,7 +157,7 @@ public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
                             if (Arrays.equals(SELECT_OK_SW, statusWordNew)) {
                                 gotData = new String(payload, "UTF-8");
 //                                if(!gotData.contains("END")) {
-                                    Log.i(TAG, "Received: " + gotData);
+//                                    Log.i(TAG, "Received: " + gotData);
 //                                    ProcesInformation(gotData);
 //                                }
 
@@ -186,42 +182,50 @@ public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
                         decodedString = accountNumber;
                     }*/
                 }
+                else {
+                    ProcesInformation("");
+                }
             } catch (IOException e) {
                 Log.e(TAG, "Error communicating with card: " + e.toString());
+                ProcesInformation("");
             }
+        }
+        else {
+            ProcesInformation("");
         }
     }
 
     @SuppressLint("ResourceAsColor")
     public void ProcesInformation(String decriptedData)
     {
-//        String encriptedStr = AESHelper.decryptWithKey(encripted);
+        if(decriptedData.isEmpty())
+        {
+            TextView mAccountField = (TextView) MainActivity.mainActivity.findViewById(R.id.card_account_field);
+            mAccountField.setText("Картата е невалидна");
+
+            FrameLayout frameLayoutBalance = (FrameLayout)MainActivity.mainActivity.findViewById(R.id.sample_content_fragment);
+            Date currentDate = new Date();
+            int newColor = 0xFFFF2222;
+            frameLayoutBalance.setBackgroundColor(newColor);
+            ((ScrollView)MainActivity.mainActivity.findViewById(R.id.scrollable_view)).setBackgroundColor(newColor);
+
+            return;
+        }
+
         TextView mAccountField = (TextView) MainActivity.mainActivity.findViewById(R.id.card_account_field);
         mAccountField.setText(decriptedData);
 
-//        String strDate = "2013-05-15";
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         int dateEndIndex = 10;
         String strDate = decriptedData.substring(0,dateEndIndex);
         String name = decriptedData.substring(dateEndIndex);
-//        String strDate = "15-05-2013";
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         try {
             Date dateFromCard = dateFormat.parse(strDate);
-//            AlertDialog.Builder builder = new AlertDialog.Builder(YourActivityName.this);
-//            getWindow().getDecorView().setBackgroundColor(Color.GREEN);
-//            View v = inflater.inflate(R.layout.main_fragment, container, false);
-//            View view = (View)MainActivity.pContext;
-//            View view = getActivity(((ContextWrapper) MainActivity.pContext).getBaseContext());;
-//            MainActivity.pContext
-//            MainActivity.mainActivity
             FrameLayout frameLayoutBalance = (FrameLayout)MainActivity.mainActivity.findViewById(R.id.sample_content_fragment);
             Date currentDate = new Date();
             int newColor;
             if (dateFromCard.after(currentDate))
             {
-//                frameLayoutBalance.setBackgroundColor(R.color.green);
                 newColor = 0xFF55FF55;
             }
             else {
@@ -232,6 +236,15 @@ public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
 
         } catch (ParseException e) {
             e.printStackTrace();
+
+            mAccountField.setText("Картата е невалидна");
+
+            FrameLayout frameLayoutBalance = (FrameLayout)MainActivity.mainActivity.findViewById(R.id.sample_content_fragment);
+            Date currentDate = new Date();
+            int newColor = 0xFFFF2222;
+            frameLayoutBalance.setBackgroundColor(newColor);
+            ((ScrollView)MainActivity.mainActivity.findViewById(R.id.scrollable_view)).setBackgroundColor(newColor);
+
         }
 
     }
