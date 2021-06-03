@@ -62,7 +62,7 @@ import static com.google.android.material.internal.ContextUtils.getActivity;
 public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
     private static final String TAG = "LoyaltyCardReader";
     // AID for our loyalty card service.
-    private static final String SAMPLE_LOYALTY_CARD_AID = "F222222222";
+    private static final String SAMPLE_LOYALTY_CARD_AID = "F222222220";
     // ISO-DEP command HEADER for selecting an AID.
     // Format: [Class | Instruction | Parameter 1 | Parameter 2]
     private static final String SELECT_APDU_HEADER = "00A40400";
@@ -149,29 +149,29 @@ public class LoyaltyCardReader implements NfcAdapter.ReaderCallback {
 
                     // Inform CardReaderFragment of received account number
                     if (true) {
-//                        timeTaken = System.currentTimeMillis();
-//                        while (!(gotData.contains("END"))) {
-//                            byte[] getCommand = BuildGetDataApdu();
-//                            Log.i(TAG, "Sending: " + ByteArrayToHexString(getCommand));
-//                            result = isoDep.transceive(getCommand);
-//                            resultLength = result.length;
-//                            Log.i(TAG, "Received length : " + resultLength);
-//                            byte[] statusWordNew = {result[resultLength - 2], result[resultLength - 1]};
-//                            payload = Arrays.copyOf(result, resultLength - 2);
-//                            if (Arrays.equals(SELECT_OK_SW, statusWordNew)) {
-//                                gotData = new String(payload, "UTF-8");
-////                                if(!gotData.contains("END")) {
-//                                    Log.i(TAG, "Received: " + gotData);
+                        timeTaken = System.currentTimeMillis();
+                        while (!(gotData.contains("END"))) {
+                            byte[] getCommand = BuildGetDataApdu();
+                            Log.i(TAG, "Sending: " + ByteArrayToHexString(getCommand));
+                            result = isoDep.transceive(getCommand);
+                            resultLength = result.length;
+                            Log.i(TAG, "Received length : " + resultLength);
+                            byte[] statusWordNew = {result[resultLength - 2], result[resultLength - 1]};
+                            payload = Arrays.copyOf(result, resultLength - 2);
+                            if (Arrays.equals(SELECT_OK_SW, statusWordNew)) {
+                                gotData = new String(payload, "UTF-8");
+//                                if(!gotData.contains("END")) {
+                                    Log.i(TAG, "Received: " + gotData);
 //                                    ProcesInformation(gotData);
-////                                }
-//
-//                                finalGotData = finalGotData + gotData;
-//                                Log.i(TAG, "Data transferred : " + finalGotData.length());
-//                                Log.i(TAG, "Time taken: " + (System.currentTimeMillis() - timeTaken));
-//
-//                            }
-//                        }
-//                        mAccountCallback.get().onAccountReceived(gotData);
+//                                }
+
+                                finalGotData = finalGotData + gotData;
+                                Log.i(TAG, "Data transferred : " + finalGotData.length());
+                                Log.i(TAG, "Time taken: " + (System.currentTimeMillis() - timeTaken));
+
+                            }
+                        }
+                        mAccountCallback.get().onAccountReceived(gotData);
 
                     }
                     //mAccountCallback.get().onAccountReceived(accountNumber);

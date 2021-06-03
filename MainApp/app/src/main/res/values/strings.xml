@@ -46,4 +46,9 @@
     <string name="invalid">Form is invalid</string>
     <string name="light_theme_form">Light Theme</string>
     <string name="dark_theme_form">Dark Theme</string>
+
+    <string name="sample_show_log">Show Log</string>
+    <string name="sample_hide_log">Hide Log</string>
+    <string name="service_name">Emulation Service</string>
+    <string name="card_title">ЦГМ</string>
 </resources>
