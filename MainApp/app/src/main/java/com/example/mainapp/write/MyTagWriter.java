@@ -49,7 +49,7 @@ public class MyTagWriter {
     }
     private HashMap<Integer, HashMap<Integer, byte[]>> mDumpWithPos;
 
-    private void initDumpWithPosFromDump(String[] dump) {
+    public void initDumpWithPosFromDump(String[] dump) {
         mDumpWithPos = new HashMap<>();
         int sector = 0;
         int block = 0;

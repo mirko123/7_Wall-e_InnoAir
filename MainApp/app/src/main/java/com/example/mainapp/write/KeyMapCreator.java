@@ -78,6 +78,7 @@ public class KeyMapCreator {
     public void start(Intent intent) {
 //        Common.treatAsNewTag();
         Common.treatAsNewTag(intent, Common.mAppContext);
+        writer.initDumpWithPosFromDump(CardData.data);
         onCreateKeyMap();
 
 //        writer.checkDumpAgainstTag();
@@ -436,8 +437,8 @@ public class KeyMapCreator {
 //                mProgressBar.setMax((mLastSector-mFirstSector)+1);
 //                mCreateKeyMap.setEnabled(false);
                 mIsCreatingKeyMap = true;
-                String message = numberOfLoadedKeys + " " + (
-                        R.string.info_keys_loaded_please_wait);
+                String message = numberOfLoadedKeys + " " + "keys loaded. Creating key map. Please wait";
+                message = "Please wait";
                 Toast.makeText(Common.mAppContext, message, Toast.LENGTH_SHORT).show();
                 // Read as much as possible with given key file.
                 createKeyMap(reader, Common.mAppContext);
@@ -501,7 +502,7 @@ public class KeyMapCreator {
                 mIsCreatingKeyMap = false;
             });
         });
-//        thread.start();
+        thread.start();
     }
 
     /**
