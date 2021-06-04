@@ -29,9 +29,10 @@
 ![Невалидна дата](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/invalid_data.jpg)
 ![Невалидна карта](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/invalid_card.jpg)
 
-![Зареждане на карта](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet1.jpg)
+![Основно меню](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet1.jpg)
+![Зареждане на карта](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/zarejdane.jpg)
 
-![Изглед покупва на билет](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/zarejdane.jpg)
+![Изглед покупва на билет](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet1.jpg)
 ![Изглед на билет](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet2.jpg)
 
 ![Visa](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/visa.jpg)
