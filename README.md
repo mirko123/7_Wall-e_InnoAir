@@ -27,3 +27,6 @@
 
 ![Visa](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/visa.jpg)
 
+[Ref. Mifare Classic Tool](https://github.com/ikarus23/MifareClassicTool)
+[Ref. Card Reader sample](https://github.com/googlearchive/android-CardReader)
+
