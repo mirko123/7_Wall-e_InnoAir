@@ -9,6 +9,9 @@ import android.os.Build.VERSION_CODES;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IntDef;
 
+import com.example.mainapp.BuyTicketFragment;
+import com.example.mainapp.MainActivity;
+import com.example.mainapp.cardform.LightThemeActivity;
 import com.example.mainapp.cardform.OnCardFormValidListener;
 import com.example.mainapp.cardform.view.CardEditText;
 import com.google.android.material.textfield.TextInputEditText;
@@ -47,6 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class CardForm extends LinearLayout implements CardEditText.OnCardTypeChangedListener, OnFocusChangeListener, OnClickListener,
         OnEditorActionListener, TextWatcher {
@@ -146,6 +150,21 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         mMobileNumber = findViewById(R.id.bt_card_form_mobile_number);
         mMobileNumberExplanation = findViewById(R.id.bt_card_form_mobile_number_explanation);
         mSaveCardCheckBox = findViewById(R.id.bt_card_form_save_card_checkbox);
+
+//        findViewById(R.id.procces_money).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(LightThemeActivity.this, MainActivity.class);
+//                startActivity(i);
+//                NavHostFragment.findNavController(FirstFragment.this)
+//                        .navigate(R.id.to_card_ui);
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+//        NavHostFragment.findNavController(BuyTicketFragment.this)
+//                .navigate(R.id.action_ChargeCardFragment_to_FirstFragment);
+
 
         mVisibleEditTexts = new ArrayList<>();
 
@@ -286,7 +305,8 @@ public class CardForm extends LinearLayout implements CardEditText.OnCardTypeCha
         mCardholderNameIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_cardholder_name_dark: R.drawable.bt_ic_cardholder_name);
         mCardNumberIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_card_dark : R.drawable.bt_ic_card);
 //        mPostalCodeIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_postal_code_dark : R.drawable.bt_ic_postal_code);
-        mMobileNumberIcon.setImageResource(isDarkBackground? R.drawable.bt_ic_mobile_number_dark : R.drawable.bt_ic_mobile_number);
+//        mMobileNumberIcon.setImageResource(isDarkBackground? R.drawable.bt_ic_mobile_number_dark : R.drawable.bt_ic_mobile_number);
+//        mMobileNumberIcon.setImageResource(R.drawable.dolar);
 
         setViewVisibility(mCardholderNameIcon,  cardHolderNameVisible);
         setFieldVisibility(mCardholderName, cardHolderNameVisible);

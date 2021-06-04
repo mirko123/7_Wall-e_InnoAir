@@ -10,13 +10,13 @@ tools:context=".BuyTicketFragment">
     android:id="@+id/textview_second"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintBottom_toTopOf="@id/button_second"
+    app:layout_constraintBottom_toTopOf="@id/button_buy"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
 <Button
-    android:id="@+id/button_second"
+    android:id="@+id/button_buy"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/previous"

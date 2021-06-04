@@ -42,7 +42,7 @@ public class BaseCardFormActivity extends AppCompatActivity implements OnCardFor
                 .saveCardCheckBoxChecked(true)
                 .saveCardCheckBoxVisible(true)
                 .cardholderName(CardForm.FIELD_REQUIRED)
-                .mobileNumberExplanation("Make sure SMS is enabled for this mobile number")
+//                .mobileNumberExplanation("Make sure SMS is enabled for this mobile number")
                 .actionLabel(getString(R.string.purchase))
                 .setup(this);
         mCardForm.setOnCardFormSubmitListener(this);

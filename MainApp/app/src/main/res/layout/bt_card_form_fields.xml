@@ -185,4 +185,14 @@
             android:layout_height="wrap_content"
             android:text="@string/bt_save_card_checkbox_name"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/procces_money"
+        android:layout_width="520px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="400dp"
+        android:background="@color/teal_700"
+        android:layout_marginLeft="450px"
+        android:layout_marginTop="0px"
+        android:text="Зареди"/>
 </merge>

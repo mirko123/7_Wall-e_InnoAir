@@ -29,14 +29,14 @@ public class EmulateFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(EmulateFragment.this)
-//                        .navigate(R.id.action_EmulateFragment_to_FirstFragment);
-                        .navigate(R.id.action_EmulateFragment_to_LightThemeActivity);
-            }
-        });
+//        binding.buttonEmulate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(EmulateFragment.this)
+////                        .navigate(R.id.action_EmulateFragment_to_FirstFragment);
+//                        .navigate(R.id.action_EmulateFragment_to_LightThemeActivity);
+//            }
+//        });
     }
 
     @Override

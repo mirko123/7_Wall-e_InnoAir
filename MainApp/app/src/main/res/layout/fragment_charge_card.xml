@@ -6,22 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".ChargeCardFragment">
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_charge"
+        android:layout_width="560px"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:layout_marginBottom="556dp"
+        android:background="@color/teal_700"
+        android:text="Зареди"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/dropdown_lines"
+        android:layout_width="560px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="472dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/dropdown_duration"
+        android:layout_width="560px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="400dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkbox_duration"
+        android:layout_width="560px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="328dp"
+        android:textSize="50px"
+        android:text="Ученик/Студент"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_money_count_label"
+        android:layout_width="220px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="256dp"
+        android:text="Сума"
+        android:textSize="60px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.299"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_money_count"
+        android:layout_width="97dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="252dp"
+        android:text="$$"
+        android:textSize="60px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

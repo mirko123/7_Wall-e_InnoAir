@@ -22,12 +22,16 @@
         <action
             android:id="@+id/action_FirstFragment_to_EmulateFragment"
             app:destination="@id/EmulateFragment" />
+
+        <action
+            android:id="@+id/to_card_ui"
+            app:destination="@id/LightThemeActivity" />
     </fragment>
 
     <fragment
         android:id="@+id/ChargeCardFragment"
         android:name="com.example.mainapp.ChargeCardFragment"
-        android:label="Charge card"
+        android:label="Зареди карта"
         tools:layout="@layout/fragment_charge_card">
 
         <action
@@ -38,7 +42,7 @@
     <fragment
         android:id="@+id/BuyTicketFragment"
         android:name="com.example.mainapp.BuyTicketFragment"
-        android:label="Buy ticket"
+        android:label="Купи билет"
         tools:layout="@layout/fragment_buy_ticket">
 
         <action
@@ -61,7 +65,7 @@
     <fragment
         android:id="@+id/EmulateFragment"
         android:name="com.example.mainapp.EmulateFragment"
-        android:label="Emulate"
+        android:label="Емулиране"
         tools:layout="@layout/fragment_emulate">
 
         <action

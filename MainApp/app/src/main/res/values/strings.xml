@@ -2,7 +2,7 @@
     <string name="app_name">MainApp</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
+    <string name="first_fragment_label">Начало</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Nextt</string>
     <string name="previous">Previous</string>
@@ -18,7 +18,7 @@
     <string name="bt_form_hint_cardholder_name">Cardholder Name</string>
     <string name="bt_form_hint_postal_code">Postal Code</string>
     <string name="bt_form_hint_country_code">Country Code</string>
-    <string name="bt_form_hint_mobile_number">Mobile Number</string>
+    <string name="bt_form_hint_mobile_number">Money</string>
 
     <string name="bt_cvv">CVV</string>
     <string name="bt_cvc">CVC</string>
