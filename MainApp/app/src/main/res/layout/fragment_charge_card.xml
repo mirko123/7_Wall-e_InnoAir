@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkbox_duration"
+        android:id="@+id/checkbox_decrease"
         android:layout_width="560px"
         android:layout_height="wrap_content"
         android:layout_marginBottom="328dp"
@@ -59,7 +59,7 @@
         android:layout_width="220px"
         android:layout_height="wrap_content"
         android:layout_marginBottom="256dp"
-        android:text="Сума"
+        android:text="Цена"
         android:textSize="60px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
         android:id="@+id/textview_money_count"
         android:layout_width="97dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginBottom="248dp"
         android:text="$$"
         android:textSize="60px"
         app:layout_constraintBottom_toBottomOf="parent"

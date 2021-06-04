@@ -38,24 +38,42 @@
             <intent-filter>
                 <action android:name="android.nfc.action.TECH_DISCOVERED" />
             </intent-filter>
+
             <meta-data
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
-        </activity>
 
-        <activity-alias
-            android:targetActivity=".MainActivity"
-            android:name=".MainMenuAlias"
-            android:label="@string/title_activity_main"
-            android:launchMode="singleTop" >
-            <!-- NFC Tech Filter -->
             <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
-        </activity-alias>
+            
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http"
+                    android:host="play.google.com"
+                    android:pathPrefix="/store/apps/details?id=your.package.name" />
+            </intent-filter>
+        </activity>
+
+<!--        <activity-alias-->
+<!--            android:targetActivity=".MainActivity"-->
+<!--            android:name=".MainMenuAlias"-->
+<!--            android:label="@string/title_activity_main"-->
+<!--            android:launchMode="singleTop" >-->
+<!--            &lt;!&ndash; NFC Tech Filter &ndash;&gt;-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.nfc.action.TECH_DISCOVERED" />-->
+<!--            </intent-filter>-->
+<!--            <meta-data-->
+<!--                android:name="android.nfc.action.TECH_DISCOVERED"-->
+<!--                android:resource="@xml/nfc_tech_filter" />-->
+<!--        </activity-alias>-->
 
         <activity
             android:name=".cardform.LightThemeActivity"

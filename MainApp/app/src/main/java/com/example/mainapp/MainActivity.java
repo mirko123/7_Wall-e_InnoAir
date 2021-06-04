@@ -1,6 +1,7 @@
 package com.example.mainapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.mainapp.cardform.LightThemeActivity;
@@ -15,16 +16,21 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
 import com.example.mainapp.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 import com.example.mainapp.write.Common;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    public static TextView moneyCountView;
+//    public static String moneyBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Common.mAppContext = getApplicationContext();
+
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        String moneyBalance = pref.getString("moneyBalance", "0");
+//        MainActivity.moneyBalance =
+
+        moneyCountView = ((TextView)findViewById(R.id.textview_balance));
+        moneyCountView.setText(moneyBalance);
+
+    }
+
+    public static void modifiBalance(float diff)
+    {
+        float currentBalance = Float.parseFloat(moneyCountView.getText().toString());
+        float newBalance = currentBalance + diff;
+        String balanceStr = String.valueOf(newBalance);
+
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(Common.mAppContext);
+
+        SharedPreferences.Editor edit = pref.edit();
+        edit.putString("moneyBalance", balanceStr);
+        edit.commit();
+
+        moneyCountView.setText(balanceStr);
     }
 
     @Override
