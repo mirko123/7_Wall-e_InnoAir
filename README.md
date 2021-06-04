@@ -25,10 +25,12 @@
 
 [Демо с четец на карта(видео)](https://drive.google.com/file/d/1XKwBlmZtYQhjNGFOyeyYI9yFCPX-a2hS/view?usp=sharing)
 
+### Изглед от приложението, което би заместило текущите устройства на контрольорите.
 ![Валидна дата](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/valid.jpg)
 ![Невалидна дата](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/invalid_data.jpg)
 ![Невалидна карта](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/invalid_card.jpg)
 
+### Основно приложение
 ![Основно меню](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet1.jpg)
 ![Зареждане на карта](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/zarejdane.jpg)
 
@@ -37,6 +39,7 @@
 
 ![Visa](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/visa.jpg)
 
+## Чужди проекти.
 [Ref. Mifare Classic Tool](https://github.com/ikarus23/MifareClassicTool)
 [Ref. Card Reader sample](https://github.com/googlearchive/android-CardReader)
 [Ref. Debit Card Form](https://github.com/braintree/android-card-form)
