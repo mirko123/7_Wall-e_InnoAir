@@ -10,11 +10,13 @@
 Твърдя, че всички функции на приложението биха се внедрили в ЦГМ без да е нужно нищо повече от малък софтуерен ъпдейт на текущите системи и също те не отстъпват по сигурност на текущите методи.
 
 
-[Демо с основното приложение](https://drive.google.com/file/d/1cwmRkIEwOHvxfVxQwNtAtCIX9t2r9Z-F/view?usp=sharing)
+[Презентация(pdf)](https://drive.google.com/file/d/1rWH0F7-hXBexoJJOJiqqx5m1-GbF3IM0/view?usp=sharing)
 
-[Демонстрация на метростанция](https://drive.google.com/file/d/1d1uFXCEHp0vATFxWwzP0fA3nAcTES76M/view?usp=sharing)
+[Демо с основното приложение(видео)](https://drive.google.com/file/d/1cwmRkIEwOHvxfVxQwNtAtCIX9t2r9Z-F/view?usp=sharing)
 
-[Демо с четец на карта](https://drive.google.com/file/d/1XKwBlmZtYQhjNGFOyeyYI9yFCPX-a2hS/view?usp=sharing)
+[Демонстрация на метростанция(видео)](https://drive.google.com/file/d/1d1uFXCEHp0vATFxWwzP0fA3nAcTES76M/view?usp=sharing)
+
+[Демо с четец на карта(видео)](https://drive.google.com/file/d/1XKwBlmZtYQhjNGFOyeyYI9yFCPX-a2hS/view?usp=sharing)
 
 ![Валидна дата](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/valid.jpg)
 ![Невалидна дата](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/invalid_data.jpg)
