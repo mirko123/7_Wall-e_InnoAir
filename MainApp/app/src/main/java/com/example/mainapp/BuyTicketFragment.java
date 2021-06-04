@@ -29,11 +29,25 @@ public class BuyTicketFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonBuy.setOnClickListener(new View.OnClickListener() {
+        binding.buttonBuy30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(BuyTicketFragment.this)
-                        .navigate(R.id.action_ChargeCardFragment_to_FirstFragment);
+                        .navigate(R.id.action_BuyTicketFragment_to_QrFragment);
+            }
+        });
+        binding.buttonBuy60.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(BuyTicketFragment.this)
+                        .navigate(R.id.action_BuyTicketFragment_to_QrFragment);
+            }
+        });
+        binding.buttonBuy120.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(BuyTicketFragment.this)
+                        .navigate(R.id.action_BuyTicketFragment_to_QrFragment);
             }
         });
     }

@@ -46,8 +46,8 @@
         tools:layout="@layout/fragment_buy_ticket">
 
         <action
-            android:id="@+id/action_BuyTicketFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_BuyTicketFragment_to_QrFragment"
+            app:destination="@id/BuyTicketQrFragment" />
     </fragment>
 
 <!--    <fragment-->
@@ -61,6 +61,13 @@
 <!--            app:destination="@id/FirstFragment" />-->
 <!--    </fragment>-->
 
+
+    <fragment
+        android:id="@+id/BuyTicketQrFragment"
+        android:name="com.example.mainapp.BuyTicketQrFragment"
+        android:label="QR код"
+        tools:layout="@layout/fragment_buy_ticket_qr">
+    </fragment>
 
     <fragment
         android:id="@+id/EmulateFragment"

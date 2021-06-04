@@ -4,6 +4,8 @@
 
 [Демо с основното приложение](https://drive.google.com/file/d/1cwmRkIEwOHvxfVxQwNtAtCIX9t2r9Z-F/view?usp=sharing)
 
+[Демонстрация на метростанция](https://drive.google.com/file/d/1d1uFXCEHp0vATFxWwzP0fA3nAcTES76M/view?usp=sharing)
+
 [Демо с четец на карта](https://drive.google.com/file/d/1XKwBlmZtYQhjNGFOyeyYI9yFCPX-a2hS/view?usp=sharing)
 
 ![Валидна дата](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/valid.jpg)

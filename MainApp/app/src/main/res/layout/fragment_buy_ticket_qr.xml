@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".BuyTicketQrFragment">
+
+    <ImageView
+        android:layout_width="336dp"
+        android:layout_height="254dp"
+        android:src="@drawable/qr_code"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+<!--    <TextView-->
+<!--        android:layout_width="336dp"-->
+<!--        android:layout_height="204dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="В QR е кодиран момента на издаване на билета и колко време след това е активен"-->
+<!--        android:textSize="20dp"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="28dp"-->
+<!--        tools:layout_editor_absoluteY="429dp" />-->
+
+    <TextView
+        android:id="@+id/textview_balance"
+        android:layout_width="308dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="376dp"
+        android:text="В QR е кодиран момента на издаване на билета и колко време след това е активен"
+        android:textSize="50px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
