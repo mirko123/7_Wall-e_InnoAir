@@ -39,7 +39,7 @@
 
 ![Visa](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/visa.jpg)
 
-## Чужди проекти.
+## Чужди проекти, чиито код би могъл да се намери в приложението.
 [Ref. Mifare Classic Tool](https://github.com/ikarus23/MifareClassicTool)
 [Ref. Card Reader sample](https://github.com/googlearchive/android-CardReader)
 [Ref. Debit Card Form](https://github.com/braintree/android-card-form)
