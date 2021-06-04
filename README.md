@@ -10,6 +10,14 @@
 Твърдя, че всички функции на приложението биха се внедрили в ЦГМ без да е нужно нищо повече от малък софтуерен ъпдейт на текущите системи и също те не отстъпват по сигурност на текущите методи.
 
 
+## Сигурност
+Няма значение какъв стандарт карта се използва, ако информацията върху нея е криптирана и ключовете са известни само на ЦГМ.
+Комуникацията, която която се осъществява между четец и телефон в моето приложение е [криптирана](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/MainApp/app/src/main/java/com/example/mainapp/emulator/AESHelper.java) Експлоите на Mifare Classic картите са известни от много време. [Ключовете(pdf)](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/MainApp/app/src/main/java/com/example/mainapp/write/CardData.java) за четене и писане на всяка Mifare Classic(текущия стандарт на картите на градския транспорт) биха се получили за няколкото минути и след това да се прилагат за всяка карта за градски транспорт. 
+
+
+
+
+
 [Презентация(pdf)](https://drive.google.com/file/d/1rWH0F7-hXBexoJJOJiqqx5m1-GbF3IM0/view?usp=sharing)
 
 [Демо с основното приложение(видео)](https://drive.google.com/file/d/1cwmRkIEwOHvxfVxQwNtAtCIX9t2r9Z-F/view?usp=sharing)
