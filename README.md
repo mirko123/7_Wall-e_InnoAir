@@ -12,8 +12,7 @@
 
 ## Сигурност
 Няма значение какъв стандарт карта се използва, ако информацията върху нея е криптирана и ключовете са известни само на ЦГМ.
-Комуникацията, която която се осъществява между четец и телефон в моето приложение е [криптирана](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/MainApp/app/src/main/java/com/example/mainapp/emulator/AESHelper.java) Експлоите на Mifare Classic картите са известни от много време. [Ключовете(pdf)](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/MainApp/app/src/main/java/com/example/mainapp/write/CardData.java) за четене и писане на всяка Mifare Classic(текущия стандарт на картите на градския транспорт) биха се получили за няколкото минути и след това да се прилагат за всяка карта за градски транспорт. 
-
+Комуникацията, която която се осъществява между четец и телефон в моето приложение е [криптирана](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/MainApp/app/src/main/java/com/example/mainapp/emulator/AESHelper.java) Експлоите на Mifare Classic картите са известни от много време. [Ключовете](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/MainApp/app/src/main/java/com/example/mainapp/write/CardData.java) за четене и писане на всяка Mifare Classic(текущия стандарт на картите на градския транспорт) биха се получили за няколкото минути и след това да се прилагат за всяка карта за градски транспорт. 
 
 
 
