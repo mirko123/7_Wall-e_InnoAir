@@ -37,6 +37,7 @@
 ![Изглед покупва на билет](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet1.jpg)
 ![Изглед на билет](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/bilet2.jpg)
 
+![Емулиране](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/emulation.jpg)
 ![Visa](https://github.com/mirko123/7_Wall-e_InnoAir/blob/master/Demos/visa.jpg)
 
 ## Чужди проекти, чиито код би могъл да се намери в приложението.
